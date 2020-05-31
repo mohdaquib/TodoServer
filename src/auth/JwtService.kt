@@ -1,14 +1,14 @@
-package com.todo.auth
+package com.demo.auth
 
 import com.auth0.jwt.JWT
 import com.auth0.jwt.JWTVerifier
 import com.auth0.jwt.algorithms.Algorithm
-import com.todo.models.User
+import com.demo.models.User
 import java.util.*
 
 class JwtService {
     private val issuer = "todoServer"
-    private val jwtSecret = System.getenv("JWT_SECRET")
+    private val jwtSecret = "898748674728934843"
     private val algorithm = Algorithm.HMAC512(jwtSecret)
 
     val verifier: JWTVerifier = JWT.require(algorithm)

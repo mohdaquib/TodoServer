@@ -1,9 +1,9 @@
-package com.todo.routes
+package com.demo.routes
 
-import com.todo.API_VERSION
-import com.todo.auth.JwtService
-import com.todo.auth.MySession
-import com.todo.repository.Repository
+import com.demo.API_VERSION
+import com.demo.auth.JwtService
+import com.demo.auth.MySession
+import com.demo.repository.Repository
 import io.ktor.application.application
 import io.ktor.application.call
 import io.ktor.application.log

@@ -1,4 +1,4 @@
-package com.todo.models
+package com.demo.models
 
 import io.ktor.auth.Principal
 import java.io.Serializable

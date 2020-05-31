@@ -1,7 +1,7 @@
-package com.todo.repository
+package com.demo.repository
 
-import com.todo.models.Todo
-import com.todo.models.User
+import com.demo.models.Todo
+import com.demo.models.User
 
 interface Repository {
     suspend fun addUser(email: String,

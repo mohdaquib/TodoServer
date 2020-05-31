@@ -1,4 +1,4 @@
-package com.todo.auth
+package com.demo.auth
 
 import io.ktor.util.KtorExperimentalAPI
 import io.ktor.util.hex
@@ -6,7 +6,7 @@ import javax.crypto.Mac
 import javax.crypto.spec.SecretKeySpec
 
 @KtorExperimentalAPI
-val hashKey = hex(System.getenv("SECRET_KEY"))
+val hashKey = hex("898748674728934843")
 
 @KtorExperimentalAPI
 val hmacKey = SecretKeySpec(hashKey, "HmacSHA1")

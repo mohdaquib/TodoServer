@@ -1,5 +1,8 @@
-package com.todo.routes
+package com.demo.routes
 
+import com.demo.API_VERSION
+import com.demo.auth.MySession
+import com.demo.repository.Repository
 import io.ktor.application.application
 import io.ktor.application.call
 import io.ktor.application.log
@@ -12,9 +15,6 @@ import io.ktor.response.respond
 import io.ktor.routing.Route
 import io.ktor.sessions.get
 import io.ktor.sessions.sessions
-import com.todo.auth.MySession
-import com.todo.repository.Repository
-import com.todo.API_VERSION
 import io.ktor.routing.get
 import io.ktor.routing.post
 

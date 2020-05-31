@@ -1,19 +1,18 @@
-package com.todo
+package com.demo
 
-import com.todo.auth.JwtService
-import com.todo.auth.MySession
-import com.todo.auth.hash
-import com.todo.repository.DatabaseFactory
-import com.todo.repository.TodoRepository
-import com.todo.routes.todos
-import com.todo.routes.users
+import com.demo.auth.JwtService
+import com.demo.auth.MySession
+import com.demo.auth.hash
+import com.demo.repository.DatabaseFactory
+import com.demo.repository.TodoRepository
+import com.demo.routes.todos
+import com.demo.routes.users
 import io.ktor.application.Application
 import io.ktor.application.install
 import io.ktor.auth.Authentication
 import io.ktor.auth.jwt.jwt
 import io.ktor.features.ContentNegotiation
 import io.ktor.gson.gson
-import io.ktor.locations.Location
 import io.ktor.locations.Locations
 import io.ktor.routing.routing
 import io.ktor.sessions.Sessions

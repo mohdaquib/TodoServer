@@ -1,8 +1,8 @@
-package com.todo.repository
+package com.demo.repository
 
-import com.todo.models.Todo
-import com.todo.models.User
-import com.todo.repository.DatabaseFactory.dbQuery
+import com.demo.models.Todo
+import com.demo.models.User
+import com.demo.repository.DatabaseFactory.dbQuery
 import org.jetbrains.exposed.sql.ResultRow
 import org.jetbrains.exposed.sql.insert
 import org.jetbrains.exposed.sql.select

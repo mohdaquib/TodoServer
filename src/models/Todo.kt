@@ -1,4 +1,4 @@
-package com.todo.models
+package com.demo.models
 
 class Todo(val id: Int,
            val userId: Int,

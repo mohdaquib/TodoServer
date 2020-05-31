@@ -1,4 +1,4 @@
-package com.todo.repository
+package com.demo.repository
 
 import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource
@@ -7,6 +7,7 @@ import kotlinx.coroutines.withContext
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.SchemaUtils
 import org.jetbrains.exposed.sql.transactions.transaction
+import java.lang.System.getenv
 
 object DatabaseFactory {
 
@@ -20,17 +21,17 @@ object DatabaseFactory {
     }
 
     private fun hikari(): HikariDataSource {
-        val config = HikariConfig()
-        config.driverClassName = System.getenv("JDBC_DRIVER")
-        config.jdbcUrl = System.getenv("JDBC_DATABASE_URL")
+        val config = HikariConfig("hikari.properties")
+        config.driverClassName = config.driverClassName
+        config.jdbcUrl = config.jdbcUrl
         config.maximumPoolSize = 3
         config.isAutoCommit = false
         config.transactionIsolation = "TRANSACTION_REPEATABLE_READ"
-        val user = System.getenv("DB_USER")
+        val user = config.username
         if (user != null){
             config.username = user
         }
-        val password = System.getenv("DB_PASSWORD")
+        val password = config.password
         if (password != null){
             config.password = password
         }
