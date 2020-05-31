@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ToDo</string>
+    <string name="completed_status">Completed</string>
+    <string name="pending_status">Pending</string>
+    <string name="something_went_wrong_title_label">Something went wrong</string>
+    <string name="give_it_another_try_label">Give it another try</string>
+    <string name="reload_text_label">RELOAD</string>
+</resources>

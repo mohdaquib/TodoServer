@@ -1,0 +1,90 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.todo"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        dataBinding {
+            enabled = true
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            buildConfigField "String", "API_URL", "\"https://jsonplaceholder.typicode.com\""
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    def lifecycle_version = "2.2.0-rc01"
+    implementation "android.arch.lifecycle:extensions:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+
+    def fragment_version = "1.2.0-beta01"
+    implementation "androidx.fragment:fragment-ktx:$fragment_version"
+
+    def core_version = "1.1.0"
+    implementation "androidx.appcompat:appcompat:$core_version"
+    implementation "androidx.core:core-ktx:$core_version"
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+
+    def retrofit_version = "2.6.2"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+
+    def okhttp_version = "4.2.2"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+
+    def recyclerview_version = "1.1.0"
+    implementation "androidx.recyclerview:recyclerview:$recyclerview_version"
+
+    def shimmer_version = "0.5.0"
+    implementation "com.facebook.shimmer:shimmer:$shimmer_version"
+
+    def shimmer_recyclerview_version = "0.4.0"
+    implementation "com.todkars:shimmer-recyclerview:$shimmer_recyclerview_version"
+
+    def androidx_material = "1.1.0"
+    implementation "com.google.android.material:material:$androidx_material"
+
+    // Testing
+    testImplementation 'junit:junit:4.13'
+    testImplementation "org.mockito:mockito-core:3.3.3"
+    testImplementation 'androidx.arch.core:core-testing:2.1.0'
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.5'
+
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
