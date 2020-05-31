@@ -1,0 +1,6 @@
+{
+  "name": "TodoServer",
+  "description": "Todo Server app",
+  "image": "heroku/gradle",
+  "addons": [ "heroku-postgresql" ]
+}
